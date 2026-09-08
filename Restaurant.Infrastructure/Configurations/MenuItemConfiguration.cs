@@ -41,6 +41,13 @@ namespace Restaurant.Infrastructure.Configurations
                 .WithMany()
                 .HasForeignKey(m => m.BranchId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            // MenuItemConfiguration.cs
+            builder.HasData(
+                new MenuItem { Id = 1, Name = "بطاطس محمرة", Price = 45, CategoryId = 1, BranchId = 1, IsAvailable = true, Description = "بطاطس مقرمشة" },
+                new MenuItem { Id = 2, Name = "برجر لحمة", Price = 120, CategoryId = 2, BranchId = 1, IsAvailable = true, Description = "برجر 200 جرام" },
+                new MenuItem { Id = 3, Name = "عصير مانجة", Price = 35, CategoryId = 3, BranchId = 1, IsAvailable = true, Description = "طازة" }
+            );
         }
     }
 }

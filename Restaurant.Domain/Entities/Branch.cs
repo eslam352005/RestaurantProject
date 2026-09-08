@@ -11,9 +11,9 @@ namespace Restaurant.Domain.Entities
         public string Address { get; set; } = string.Empty;
         public string Phone { get; set; } = string.Empty;
         public bool IsActive { get; set; }
-        public ICollection<Table> Tables { get; set; } = new List<Table>();
-        public ICollection<Staff> Staff { get; set; } = new List<Staff>();
-        public ICollection<Inventory> InventoryItems { get; set; } = new List<Inventory>();
-        public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public ICollection<Table> Tables { get; set; } 
+        public ICollection<Staff> Staff { get; set; } 
+        public ICollection<Inventory> InventoryItems { get; set; } 
+        public ICollection<Order> Orders { get; set; } 
     }
 }

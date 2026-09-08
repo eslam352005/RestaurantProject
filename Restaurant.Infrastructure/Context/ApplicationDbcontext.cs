@@ -10,7 +10,7 @@ using System.Text;
 
 namespace Restaurant.Infrastructure.Context
 {
-    internal class ApplicationDbcontext : IdentityDbContext<ApplicationUser> , IApplicationDbcontext
+    public class ApplicationDbcontext : IdentityDbContext<ApplicationUser> , IApplicationDbcontext
     {
 
         public ApplicationDbcontext(DbContextOptions<ApplicationDbcontext> options) : base(options)
@@ -31,7 +31,7 @@ namespace Restaurant.Infrastructure.Context
 
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
-
+        
         public DbSet<Branch> Branches => Set<Branch>();
 
         public DbSet<Staff> Staff => Set<Staff>();

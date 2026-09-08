@@ -12,7 +12,7 @@ namespace Restaurant.Domain.Entities
         public int Capacity { get; set; }
         public TableStatus Status { get; set; } // Available, Occupied, Reserved
         public int BranchId { get; set; }
-        public Branch Branch { get; set; } = new Branch();
-        public ICollection<Order> Orders { get; set; } = new List<Order>();
+        public Branch Branch { get; set; } 
+        public ICollection<Order> Orders { get; set; } 
     }
 }

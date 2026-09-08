@@ -12,6 +12,6 @@ namespace Restaurant.Domain.Entities
         public string Unit { get; set; } = string.Empty; // kg, liter, piece 
         public decimal MinimumThreshold { get; set; }
         public int BranchId { get; set; }
-        public Branch Branch { get; set; } = new Branch();
+        public Branch Branch { get; set; } 
     }
 }

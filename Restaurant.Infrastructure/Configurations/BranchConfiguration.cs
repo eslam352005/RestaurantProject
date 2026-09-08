@@ -49,6 +49,13 @@ namespace Restaurant.Infrastructure.Configurations
                 .WithOne(o => o.Branch)
                 .HasForeignKey(o => o.BranchId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+
+            // BranchConfiguration.cs - داخل Configure()
+            builder.HasData(
+                new Branch { Id = 1, Name = "فرع المنصورة", Address = "شارع الجمهورية", Phone = "01000000001", IsActive = true },
+                new Branch { Id = 2, Name = "فرع القاهرة", Address = "مدينة نصر", Phone = "01000000002", IsActive = true }
+            );
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Restaurant.Domain.Entities
         public string FullName { get; set; } = string.Empty;
         public StaffRole Role { get; set; } // Admin, Manager, Chef, Waiter
         public int BranchId { get; set; }
-        public Branch Branch { get; set; } = new Branch();
-        public ApplicationUser ApplicationUser { get; set; } = new ApplicationUser();
+        public Branch Branch { get; set; } 
+        public ApplicationUser ApplicationUser { get; set; } 
     }
 }

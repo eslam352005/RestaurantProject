@@ -16,6 +16,6 @@ namespace Restaurant.Domain.Entities
         public DateTime? RefreshTokenExpiryTime { get; set; }
 
         // Navigation
-        public Staff Staff { get; set; } = new Staff();
+        public Staff Staff { get; set; } 
     }
 }

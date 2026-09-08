@@ -37,6 +37,13 @@ namespace Restaurant.Infrastructure.Configurations
                 .WithOne(o => o.Table)
                 .HasForeignKey(o => o.TableId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            // TableConfiguration.cs
+            builder.HasData(
+                new Table { Id = 1, TableNumber = "T1", Capacity = 4, Status = TableStatus.Available, BranchId = 1 },
+                new Table { Id = 2, TableNumber = "T2", Capacity = 2, Status = TableStatus.Available, BranchId = 1 },
+                new Table { Id = 3, TableNumber = "T3", Capacity = 6, Status = TableStatus.Available, BranchId = 1 }
+            );
         }
     }
 }

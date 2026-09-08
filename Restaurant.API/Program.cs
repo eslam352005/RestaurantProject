@@ -1,6 +1,11 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi;
 using Restaurant.Application;
+using Restaurant.Application.Interfaces;
+using Restaurant.Domain.Entities;
 using Restaurant.Infrastructure;
+using Restaurant.Infrastructure.Context;
+using Restaurant.Infrastructure.Seeder;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -54,12 +59,22 @@ builder.Services.AddInfrastructure(builder.Configuration)
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+using (var scope = app.Services.CreateScope())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var services = scope.ServiceProvider;
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+    var context = services.GetRequiredService<ApplicationDbcontext>();
+    await RoleSeeder.SeedAsync(roleManager);
+    await UserSeeder.SeedAsync(userManager, roleManager, context);
 }
+
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
 
 app.UseHttpsRedirection();
 app.UseAuthentication();

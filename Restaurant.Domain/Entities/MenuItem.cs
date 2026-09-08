@@ -13,8 +13,8 @@ namespace Restaurant.Domain.Entities
         public string ImageUrl { get; set; } = string.Empty;
         public bool IsAvailable { get; set; }
         public int CategoryId { get; set; }
-        public Category Category { get; set; } = new Category();
+        public Category Category { get; set; } 
         public int BranchId { get; set; }
-        public Branch Branch { get; set; } = new Branch();
+        public Branch Branch { get; set; } 
     }
 }

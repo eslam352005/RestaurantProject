@@ -33,6 +33,13 @@ namespace Restaurant.Infrastructure.Configurations
                 .WithMany(b => b.InventoryItems)
                 .HasForeignKey(i => i.BranchId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            // InventoryConfiguration.cs
+            builder.HasData(
+                new Inventory { Id = 1, ItemName = "لحمة بقري", QuantityAvailable = 50, Unit = "kg", MinimumThreshold = 10, BranchId = 1 },
+                new Inventory { Id = 2, ItemName = "بطاطس", QuantityAvailable = 100, Unit = "kg", MinimumThreshold = 20, BranchId = 1 },
+                new Inventory { Id = 3, ItemName = "زيت", QuantityAvailable = 30, Unit = "liter", MinimumThreshold = 5, BranchId = 1 }
+            );
         }
     }
 }

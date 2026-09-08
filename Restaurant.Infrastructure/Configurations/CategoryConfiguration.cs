@@ -23,6 +23,13 @@ namespace Restaurant.Infrastructure.Configurations
                 .WithOne(m => m.Category)
                 .HasForeignKey(m => m.CategoryId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            // CategoryConfiguration.cs
+            builder.HasData(
+                new Category { Id = 1, Name = "مقبلات" },
+                new Category { Id = 2, Name = "أطباق رئيسية" },
+                new Category { Id = 3, Name = "مشروبات" }
+            );
         }
     }
 }

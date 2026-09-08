@@ -11,12 +11,12 @@ namespace Restaurant.Domain.Entities
         public DateTime CreatedAt { get; set; }
         public OrderStatus Status { get; set; } // Pending, Preparing, Ready, Served, Cancelled
         public int TableId { get; set; }
-        public Table Table { get; set; } = new Table();
+        public Table Table { get; set; } 
         public int BranchId { get; set; }
-        public Branch Branch { get; set; } = new Branch();
+        public Branch Branch { get; set; } 
         public int WaiterId { get; set; }
-        public Staff Waiter { get; set; } = new Staff();
+        public Staff Waiter { get; set; } 
         public decimal TotalAmount { get; set; }
-        public ICollection<OrderItem> Items { get; set; } = new List<OrderItem>();
+        public ICollection<OrderItem> Items { get; set; } 
     }
 }
