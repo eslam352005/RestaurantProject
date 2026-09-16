@@ -12,6 +12,7 @@ namespace Restaurant.Application
 
             services.AddScoped<IBranchService,BranchService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IMenuItemService, MenuitemService>();
             services.AddAutoMapper(cfg => { }, typeof(ApplicationDependencyInjection).Assembly);
 
             return services;
