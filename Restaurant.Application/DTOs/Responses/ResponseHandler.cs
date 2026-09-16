@@ -25,7 +25,7 @@ namespace Restaurant.Application.DTOs.Responses
 
                 Success = false,
                 StatusCode = 404,
-                Message = message ?? "Resource not found.",
+                Message = message ?? " Not found.",
                 
             };
         }

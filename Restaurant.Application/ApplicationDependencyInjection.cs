@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Restaurant.Application.Interfaces;
+using Restaurant.Application.Services;
 
 namespace Restaurant.Application
 {
@@ -6,7 +8,11 @@ namespace Restaurant.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            // Register application services here
+            
+
+            services.AddScoped<IBranchService,BranchService>();
+            services.AddAutoMapper(cfg => { }, typeof(ApplicationDependencyInjection).Assembly);
+
             return services;
         }
     }
