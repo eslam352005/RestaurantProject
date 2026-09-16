@@ -11,7 +11,7 @@ namespace Restaurant.Application.Interfaces
         public Task<ResponseDto<BranchDto>> GetBranchByIdAsync(int id);
         public Task<ResponseDto<IEnumerable<BranchDto>>> GetBranchesAsync();
         public Task<ResponseDto<BranchDto>> CreateBranchAsync(CreateBranchDto dto);
-        public Task<ResponseDto<BranchDto>> UpdateBranchAsync(int id, UpdateBranchDto dto);
-        public Task<ResponseDto<bool>> DeleteBranchAsync(int id);
+        public Task<ResponseDto<BranchDto>> UpdateBranch(int id, UpdateBranchDto dto);
+        public Task<ResponseDto<bool>> DeleteBranch(int id);
     }
 }

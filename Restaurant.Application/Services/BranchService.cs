@@ -21,7 +21,7 @@ namespace Restaurant.Application.Services
             return ResponseHandler.Success(branchDto, "Branch created successfully");
         }
 
-        public async Task<ResponseDto<bool>> DeleteBranchAsync(int id)
+        public async Task<ResponseDto<bool>> DeleteBranch(int id)
         {
             var branch = await _context.Branches.FindAsync(id);
             if(branch == null)
@@ -51,7 +51,7 @@ namespace Restaurant.Application.Services
             return ResponseHandler.Success(branchDtos, "Branches retrieved successfully");
         }
 
-        public async Task<ResponseDto<BranchDto>> UpdateBranchAsync(int id, UpdateBranchDto dto)
+        public async Task<ResponseDto<BranchDto>> UpdateBranch(int id, UpdateBranchDto dto)
         {
             var branch = await _context.Branches.FindAsync(id);
             if (branch == null)
