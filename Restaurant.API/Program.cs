@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.OpenApi;
+using Restaurant.API.Hubs;
 using Restaurant.Application;
 using Restaurant.Application.Interfaces;
 using Restaurant.Domain.Entities;
@@ -53,7 +54,8 @@ builder.Services.AddCors(options =>
             .AllowAnyHeader();
     });
 });
-
+builder.Services.AddSignalR();
+builder.Services.AddScoped<IKitchenNotifier, KitcheNotifier>();
 builder.Services.AddInfrastructure(builder.Configuration)
                 .AddApplication();
 
@@ -82,5 +84,5 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MapHub<KitchenHub>("/hub/kitchenHub");
 app.Run();

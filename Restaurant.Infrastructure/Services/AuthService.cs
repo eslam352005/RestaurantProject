@@ -184,6 +184,16 @@ namespace Restaurant.Infrastructure.Services
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
 
+            // ✅ جيب بيانات الـ Staff المرتبطة باليوزر ده
+            var staff = await _dbcontext.Staff
+                .FirstOrDefaultAsync(s => s.ApplicationUserId == user.Id);
+
+            if (staff != null)
+            {
+                claims.Add(new Claim("StaffId", staff.Id.ToString()));
+                claims.Add(new Claim("BranchId", staff.BranchId.ToString()));
+            }
+
             var secretKey = _configuration["JwtOptions:SecretKey"];
 
             if (string.IsNullOrEmpty(secretKey))
