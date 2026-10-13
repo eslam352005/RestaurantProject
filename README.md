@@ -72,7 +72,6 @@ The Application layer depends on abstractions only (`IApplicationDbContext`, `IK
 ### 1. Clone
 ```bash
 git clone https://github.com/eslam352005/Restaurant.git
-cd Restaurant
 ```
 
 ### 2. Configure
